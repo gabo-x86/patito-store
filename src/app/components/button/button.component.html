@@ -1,1 +1,23 @@
-<button type="button" class="btn btn-primary">Agregar patito</button>
+<div class="d-inline p-1">
+    <div *ngIf="type==='primary'; then showPrimaryButton"></div>
+    <ng-template #showPrimaryButton>
+        <button type="button" class="btn btn-primary">
+            {{ text }}
+        </button>
+    </ng-template>
+
+    <div *ngIf="type==='danger'; then showDangerButton"></div>
+    <ng-template #showDangerButton>
+        <button type="button" class="btn btn-danger">
+            {{ text }}
+        </button>
+    </ng-template>
+
+    <div *ngIf="type==='success'; then showSuccessButton"></div>
+    <ng-template #showSuccessButton>
+        <button type="button" class="btn btn-success">
+            {{ text }}
+        </button>
+    </ng-template>
+
+</div>
